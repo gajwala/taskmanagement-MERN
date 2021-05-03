@@ -9,6 +9,9 @@ function CreateMentor({ modal, toggle, save, singleMentor, isUpdate }) {
     if (isUpdate) {
       setName(singleMentor?.name);
       setEmail(singleMentor?.email);
+    }else{
+      setName('');
+      setEmail('');
     }
   }, [isUpdate]);
   const handleChange = (e) => {
