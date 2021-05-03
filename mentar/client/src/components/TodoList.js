@@ -9,9 +9,10 @@ import {
   getTask,
   deleteSingleTask,
 } from "../redux/actions/task";
-
+import { useHistory } from "react-router-dom";
 const TodoList = (props) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   let taskList = useSelector((state) => state.tasks.tasks);
   const loading = useSelector((state) => state.tasks.loading);
   const [modal, setModal] = useState(false);
@@ -54,6 +55,9 @@ const TodoList = (props) => {
         <h3>Todo List</h3>
         <button className="btn btn-primary mt-2" onClick={() => setModal(true)}>
           Create Task
+        </button> <br></br>
+        <button className="btn btn-primary mt-2" onClick={() => history.push('/')}>
+          Go Back
         </button>
       </div>
       <div className="task-container">
